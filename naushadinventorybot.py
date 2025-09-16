@@ -101,7 +101,7 @@ def main():
     dp = updater.dispatcher
 
     dp.add_handler(CommandHandler("start", start))
-    dp.add_handler(MessageHandler(Filters.text & Filters.regex('^(हिंदी|English|Hinglish)$)'), set_language))
+    dp.add_handler(MessageHandler(Filters.text & Filters.regex(r'^(हिंदी|English|Hinglish)$'), set_language))
     dp.add_handler(CommandHandler("additem", add_item))
     dp.add_handler(CommandHandler("viewstock", view_stock))
 
@@ -110,4 +110,5 @@ def main():
     updater.idle()
 
 if __name__ == '__main__':
+
     main()
